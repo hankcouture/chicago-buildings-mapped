@@ -2,3 +2,12 @@
 <div id="map-container">
 	<div id="map"></div>
 </div>
+
+<div class="add-building">
+	<form name="addBuildingForm" ng-submit="addBuilding( name, coordinates, url )" novalidate>
+		<input type="text" name="buildingName" ng-model="name" placeholder="Add name"/><br>
+		<input type="text" name="buildingCoordinates" ng-model="coordinates" placeholder="Add coordinates"/><br>
+		<input type="url" name="buildingUrl" ng-model="url" placeholder="Add url"/><br>
+		<input type="submit"/>
+	</form>
+</div>

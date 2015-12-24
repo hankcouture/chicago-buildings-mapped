@@ -10,10 +10,22 @@ Map.controller('MapController', ['$scope', '$http', function($scope, $http) {
       zoom: 13,
       center: mapLatLng
     });
-
   }
 
-  console.log('hello')
+  $scope.addBuilding = function(name, coordinates, url) {
+  	var data = {
+      name: name,
+      coordinates: coordinates,
+      url: url
+    };
+  	$http({
+  		method: 'POST',
+  		url: '/',
+  		data: data
+  	}).then(function(res) {
+  		console.log(res)
+  	})
+  }
 
   $scope.initMap();
 

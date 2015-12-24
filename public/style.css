@@ -1,7 +1,48 @@
 
+.body {
+	margin: 0px;
+	padding: 0px;
+}
 
+#map-container {
+	width: 80%;
+	border: 1px solid #44749D;
+	border-radius: 3px;
+	float: left;
+	height: 100%;
+}
 
 #map {
-	height: 800px;
-	width: 800px;
+	width: 100%;
+	height: 500px;
+}
+
+.add-building {
+	width: 19%;
+	float: right;
+	background-color: #f9f9f9;
+	border-radius: 3px;
+	border: 1px solid #e5e5e5;
+}
+
+.add-building form {
+	padding: 10px;
+}
+
+.add-building form input {
+	padding: 5px;
+	width: 80%;
+	margin: 0% 5%;
+}
+
+.add-building form input[type="submit"] {
+	width: 80%;
+	margin: 0% 5%;
+	padding: 5px;
+	border: none;
+	background-color: #C6D4E1;
+}
+
+.add-building form input[type="submit"]:hover {
+	background-color: #44749D;
 }
