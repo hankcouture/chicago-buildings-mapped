@@ -7,6 +7,11 @@ app.set('port', (process.env.PORT || 3000));
 
 app.use(express.static(__dirname + '/public'));
 
+app.get('/buildings', function(req, res){
+    res.setHeader('Content-Type', "application/json");
+    res.status(200).send(JSON.stringify(buildings));
+});
+
 app.post('/', function(req, res){
     res.setHeader('Content-Type', "application/json");
     req.on('data', function (data) {
