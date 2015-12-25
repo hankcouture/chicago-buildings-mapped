@@ -1,21 +1,23 @@
 <!-- views/map.html -->
+<div class="modal-background" ng-click="changeModal()" ng-show="modalShow"></div>
+<div class="add-link-modal" ng-show="modalShow">
+		<div class="add-building">
+			<i ng-click="changeModal()" class="fa fa-times-circle fa-2x"></i>
+			<form name="addBuildingForm" ng-submit="addBuilding( name, coordinates, url )" novalidate>
+				<input type="text" name="buildingName" ng-model="name" placeholder="Add name"/><br>
+				<input type="text" name="buildingCoordinates" ng-model="coordinates" placeholder="Add coordinates"/><br>
+				<input type="url" name="buildingUrl" ng-model="url" placeholder="Add url"/><br>
+				<input type="submit"/>
+			</form>
+		</div>
+</div>
 <div class='building-list'>
 	<input type="text" ng-model="searchValue" placeholder="Search..."/>
 	<i ng-click="changeModal()" class="fa fa-plus-circle add-link-icon"></i>
-	<div class="modal-background" ng-click="changeModal()" ng-show="modalShow"></div>
-	<div class="add-link-modal" ng-show="modalShow">
-			<div class="add-building">
-				<i ng-click="changeModal()" class="fa fa-times-circle fa-2x"></i>
-				<form name="addBuildingForm" ng-submit="addBuilding( name, coordinates, url )" novalidate>
-					<input type="text" name="buildingName" ng-model="name" placeholder="Add name"/><br>
-					<input type="text" name="buildingCoordinates" ng-model="coordinates" placeholder="Add coordinates"/><br>
-					<input type="url" name="buildingUrl" ng-model="url" placeholder="Add url"/><br>
-					<input type="submit"/>
-				</form>
-			</div>
-	</div>
 	<div class="building-card" ng-repeat="building in buildings | filter:searchValue">
-		<p>{{building.name}}</p>
+		<a ng-href="{{building.url}}">
+			<p>{{building.name}}</p>
+		</a>
 	</div>
 	<p class="no-search-results" ng-show="(buildings | filter:searchValue).length < 1">Sorry, no matching results</p>
 </div>
