@@ -25,7 +25,8 @@ Map.controller('MapController', ['$scope', '$http', function($scope, $http) {
       marker = new google.maps.Marker({
           position: loc,
           map: map,
-          title: buildings[m].name
+          title: buildings[m].name,
+          icon: '/assets/red-dot.png'
         });
         google.maps.event.addListener(marker,'mouseover', (function(marker,content,infowindow){ 
           return function() {

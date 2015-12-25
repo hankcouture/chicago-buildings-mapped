@@ -1,25 +1,43 @@
 
-.body {
-	margin: 0px;
+body {
+	margin: 1% 0px;
 	padding: 0px;
+	background-color: #f9f9f9;
+}
+
+.building-list {
+	float: left;
+	width: 24%;
+}
+
+.building-card {
+	border: 1px solid #e5e5e5;
+	border-radius: 3px;
+	margin: 5px 0px;
+	background-color: #fff;
+}
+
+.building-card p {
+	margin: 3px;
 }
 
 #map-container {
-	width: 80%;
-	border: 1px solid #44749D;
-	border-radius: 3px;
+	width: 74%;
 	float: left;
 	height: 100%;
 }
 
 #map {
+	border-radius: 3px;
+	border: 1px solid #44749D;
 	width: 100%;
 	height: 500px;
 }
 
 .add-building {
 	width: 19%;
-	float: right;
+	clear: both;
+	/*float: right;*/
 	background-color: #f9f9f9;
 	border-radius: 3px;
 	border: 1px solid #e5e5e5;
