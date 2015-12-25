@@ -2,6 +2,13 @@ var Map = angular.module('chicago.map', [])
 
 Map.controller('MapController', ['$scope', '$http', function($scope, $http) {
 
+
+    // For the add link pop-up modal
+  $scope.modalShow = false;
+  $scope.changeModal = function() {
+    $scope.modalShow = $scope.modalShow === false ? true : false;
+  }
+
   $scope.buildings = undefined // will get defined when the "getBuildings" function runs;
 
   $scope.initMap = function() {
